@@ -43,7 +43,28 @@
 4. **manifest 增加 legacy 语义**：19 个官方归档基因标注 `legacy归档·无替代版`，`legacyReplaced` 仅在官网真为 true 时写值。
 5. **check_vcep_version.py 语义修正**：区分「legacy 归档（不阻断）」与「真被替代（阻断）」。
 
-## 获取与授权
+## 数据来源与许可范围
 
-- 数据源自 ClinGen CSpec **公开数据**。
-- 本仓库采用 **Apache License 2.0** 分发。
+### 数据来源
+
+- **规范正文与版本元数据**：ClinGen Criteria Specification Registry（CSpec，https://cspec.genome.network/cspec/）。2026-11-09 按 133 个基因的 GN 编号逐个拉取，并做逐证据码机器比对。
+- **官方附件**：随各 VCEP 规范一并发布的原始附件，按原样归档于 `knowledge-base/knowledge-base/attachments/`。
+- **CFTR 补充段落**：ClinGen CSpec 无 CFTR 正式 VCEP。本仓库的四段 CFTR 叙述取自 CFTR2 专家共识（Sosnay et al. 2013, PMID 23974870）与 ClinVar expert-panel reviewed 记录，属共识口径摘要，已在对应文件头注明，不计入 ClinGen 正式 VCEP 统计。
+
+### 原始内容归属
+
+- ClinGen 公布其 curated content 采用 **CC0 1.0 Universal 公有领域贡献**发布，同时要求使用方署名 ClinGen 并说明数据来源（见 https://www.clinicalgenome.org/about/terms-of-use/ ）。原始规范文本、官方附件及版本元数据的著作权与归属为 ClinGen 及各 VCEP 专家组。
+- 本仓库与 ClinGen 无隶属关系，**不是 ClinGen 官方发布物**，不代表 ClinGen 或其专家组的立场。
+
+### 本仓库许可证覆盖范围
+
+- `LICENSE`（Apache License 2.0）**仅覆盖本项目自身的整理工作**，包括：目录与文件组织、`gene-gn-file-mapping.csv`、`vcep-version-manifest.csv`、`narrative-units/` 下的叙述整理、`00-索引` 与核查报告、脚本与文档。
+- Apache-2.0 **不覆盖** ClinGen 原始规范正文与官方附件；这些内容的使用请遵循 ClinGen 的条款（CC0 1.0 + 署名要求），本仓库不对其另行授权。
+- 若上述两者在具体使用场景下冲突，以原始内容的官方条款为准。
+
+### 建议引用方式
+
+- 引用原始规范：ClinGen. *[具体 VCEP 规范名称]*. Clinical Genome Resource. https://cspec.genome.network/cspec/ （accessed 2026-11-09）.
+- 引用本仓库整理层：KLameng. *ACMG-VCEP-Data v1.4.0*. https://github.com/KLameng/ACMG-VCEP-Data （accessed YYYY-MM-DD）.
+
+> 本仓库为评级辅助的快速检阅通道，不构成临床诊断或治疗依据；实际判定须回 ClinGen CSpec 官网核实当期最新版本。
