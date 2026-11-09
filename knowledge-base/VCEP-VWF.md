@@ -3,7 +3,7 @@
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
 > 规范版本：未随包声明（数据日期：2026-06-13；真实官方 CSpec 版本号见 ClinGen 官网 cspec.genome.network，使用前请核验）
-> 官网版本：GN081 v1.0 / GN090 v1.0（Released，DOI: 10.5281/zenodo.21435730 / 10.5281/zenodo.21435751，2026-10-09 官网实页核验）
+> 官网版本：GN081 v1.0（Released；lastUpdated 2026-10-09T11:49:09） / GN090 v1.0（Released；lastUpdated 2026-10-09T12:20:01）；2026-11-09 CSpec API 实测复核
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN081 — von Willebrand Disease  Variant Curation Expert Panel

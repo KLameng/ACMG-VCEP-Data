@@ -2,7 +2,7 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
-> 官网版本：v2.0（DOI: 10.5281/zenodo.21421465；核验日期 2026-10-09）
+> 官网版本：v2.1（GN006；Released 2026-11-03；lastUpdated 2026-11-03T15:08:38Z；2026-11-09 API 复核）
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN006 — Phenylketonuria Variant Curation Expert Panel
@@ -11,7 +11,8 @@
 - **MONDO:0009861**（遗传方式：未指定）
 
 ### 通用说明
-            Version 2.0
+            Version 2.1（Released 2026-11-03）
+Release note v2.1：仅更正 PM1 活性位点残基名笔误 Glu289 → Gly289（官网原文 "Active site residues in PAH include: … Pro279, Gly289, Ala300 …"）；其余证据规则、强度阈值、组合规则均无变更。
 
 ### 基因特异性证据规则
 
@@ -70,7 +71,7 @@ Note: Functional studies that have been validated and shown to be reproducible a
 #### PM1
 - 默认强度：Pathogenic Moderate
 - ACMG原始定义：Located in a mutational hot spot and/or critical and well-established functional domain (e.g. active site of an enzyme) without benign variation.
-- **Moderate** ✅：*   Active site residues in PAH include: Tyr138, Arg158, Val245, Tyr268, Thr278, Pro279, Glu289, Ala300, Asp315, Phe331, Ala345, Gly346, Ser349, Tyr377
+- **Moderate** ✅：*   Active site residues in PAH include: Tyr138, Arg158, Val245, Tyr268, Thr278, Pro279, Gly289, Ala300, Asp315, Phe331, Ala345, Gly346, Ser349, Tyr377
 *   Substrate binding residues in PAH are: 46-48, 63-69
 *   Cofactor binding residues in PAH are: His285, His290, Glu330, 246-266, 280-283, 322-326, 377-379
 *   Do not apply if PP3\_Strong applies

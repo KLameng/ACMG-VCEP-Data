@@ -2,8 +2,8 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
-> 规范版本：未随包声明（数据日期：2026-06-13；真实官方 CSpec 版本号见 ClinGen 官网 cspec.genome.network，使用前请核验）
-> 官网版本：GN077 v1.2（Released，官网页面未发布 DOI，2026-10-09 官网实页核验）
+> 规范版本：v1.3（GN077；ClinGen CSpec Registry，Released 2026-09-18）
+> 官网版本：GN077 v1.3（Released；lastUpdated 2026-09-18T16:00:30Z；2026-11-09 官网 API 实测复核）
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN077 — Hereditary Breast, Ovarian and Pancreatic Cancer Variant Curation Expert Panel
@@ -13,7 +13,7 @@
 - **MONDO:0012565**（遗传方式：Autosomal recessive inheritance）
 
 ### 通用说明
-Release notes v1.3
+> 官网版本 v1.3（Released 2026-09-18；HBOC VCEP）。Release notes v1.3：
 
 Further clarified use of BP4 in the presence of RNA data (BP4+BP7(RNA) is allowed, v1.2 had conflicting information)
 Provided additional guidance on use of gnomAD data

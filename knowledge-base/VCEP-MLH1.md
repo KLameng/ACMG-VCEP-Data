@@ -2,6 +2,7 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
+> 官网版本：GN115 v2.0（Released；lastUpdated 2026-09-09T17:32:41）；2026-11-09 CSpec API 实测复核
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN115 — InSiGHT Hereditary Colorectal Cancer/Polyposis Variant Curation Expert Panel

@@ -2,6 +2,7 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
+> 官网版本：GN027 v2.1（Released；lastUpdated 2026-07-06T12:41:05）；2026-11-09 CSpec API 实测复核
 > VCEP版本标注：Version 2.1（2026-07-06 发布；Release Notes：删除SVI响应附件，规则内容较 v2.0 无实质变化；Tavtigian 2020 贝叶斯积分法，PMID:32720330）
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 

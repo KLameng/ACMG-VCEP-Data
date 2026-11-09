@@ -2,6 +2,7 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
+> 官网版本：GN114 v2.2（Released；lastUpdated 2026-07-17T12:21:57）；2026-11-09 CSpec API 实测复核
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN114 — Severe Combined Immunodeficiency Disease  Variant Curation Expert Panel
@@ -145,7 +146,7 @@ Caveat: As many in silico algorithms use the same or very similar input for thei
 - ACMG原始定义：Patient’s phenotype or family history is highly specific for a disease with a single genetic etiology.
 - **Strong** ✅：A patient score of ≥ 6 points<sup>1</sup>. 
 
-<sup>1</sup>CNV (Copy number variation) testing is required to consider PP4\_Strong in order to certify that the variant in question is the causative for the phenotype and not one CNV event corrected by gene therapy and not identified previously (see instructions below).
+<sup>1</sup>CNV (Copy number variation) testing is required if PP4\_Strong cannot be reached without points from exogenous ADA supplementation or gene therapy in order to certify that the variant in question is causative for the phenotype, and not one CNV event corrected by gene therapy or enzyme replacement and not previously identified (see instructions below).
 - **Moderate** ✅：A patient score of 2-\<6 points (see instructions below).
 - **Supporting** ✅：A patient score of 1-\<2 points (see instructions below).
 

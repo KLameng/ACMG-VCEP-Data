@@ -1,6 +1,6 @@
 ﻿# ClinGen VCEP 基因→GN→文件 映射表
 
-> 依据 knowledge-base/VCEP-<基因>.md 内部规范提取（数据日期 2026-06-13）。共 131 个基因。
+> 依据 knowledge-base/VCEP-<基因>.md 内部规范提取（数据日期 2026-06-13；2026-11-09 增补 DDX41）。共 132 个基因。
 > 多规范基因：ACTA1(147/169)、RYR1(012/150/179)、VWF(081/090)——评级时必须读取该基因全部规范。
 > 知识库文件：knowledge-base/<知识库文件>；叙事单元：narrative-units/VCEP-<基因>*（类别 a概述/b致病/c良性/d附件）；附件：knowledge-base/knowledge-base/attachments/GN<编号>_*。
 
@@ -30,6 +30,7 @@
 | CTLA4 | 122 | Antibody Deficiencies Variant Curation Expert Panel | VCEP-CTLA4.md |  | 26 | 6 |
 | CYP1B1 | 104 | Glaucoma Variant Curation Expert Panel | VCEP-CYP1B1.md |  | 9 | 0 |
 | DCLRE1C | 116 | Severe Combined Immunodeficiency Disease  Variant Curation Expert Panel | VCEP-DCLRE1C.md |  | 13 | 4 |
+| DDX41 | 159 | Myeloid Malignancy Variant Curation Expert Panel | VCEP-DDX41.md |  | 4 | 0 |
 | DICER1 | 024 | DICER1 and miRNA-Processing Gene Variant Curation Expert Panel | VCEP-DICER1.md |  | 11 | 1 |
 | DNM2 | 148 | Congenital Myopathies Variant Curation Expert Panel | VCEP-DNM2.md |  | 10 | 2 |
 | DYSF | 180 | Limb Girdle Muscular Dystrophy Variant Curation Expert Panel | VCEP-DYSF.md |  | 18 | 6 |

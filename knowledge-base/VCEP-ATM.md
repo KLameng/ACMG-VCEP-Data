@@ -1,7 +1,7 @@
 ﻿# ClinGen VCEP基因特异性规范：ATM
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
-> 数据日期：2026-06-13
+> 数据日期：2026-06-13（基线快照）；规范正文已按官网 v1.6 补录（Released 2026-09-18；2026-11-09 API 复核）
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN020 — Hereditary Breast, Ovarian and Pancreatic Cancer Variant Curation Expert Panel

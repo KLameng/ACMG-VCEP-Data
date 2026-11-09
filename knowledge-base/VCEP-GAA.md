@@ -150,5 +150,24 @@ Caveat: As many in silico algorithms use the same or very similar input for thei
 
 ### 不适用证据码
 PS2、PS4、PM6、PP1、PP2、PP5、BS4、BP1、BP3、BP5、BP6
+
+## ⚠️ GAA 专项口径：leaky splice 非纯 LOF + 同义禁 PVS1（var124/var129 病根，2026-11-03 补）
+
+> **实证（66 条归因）**：var124 GAA splicing 金 P 判 VUS（RT-PCR leaky splice 被当纯 LOF 处理）；var129 GAA 同义金 LB 误给 PVS1_VS+PM2→P（严重反向）。两条均源于**把"剪接异常/同义"直接当 PVS1 LOF 硬凑**。
+
+### 规则一：leaky splice（漏读剪接）不是纯 LOF，不得直接给 PVS1_VeryStrong
+- **leaky splice 定义**：剪接变异导致部分转录本异常剪接（exon skipping），但**保留部分正常剪接产物**（RT-PCR 见正常剪接条带 + 异常条带并存）。
+- **判定**：
+  1. 有 RT-PCR/RNA 证据表明**存在正常剪接产物（leaky）** → 该变异**不构成完全 LOF**，PVS1 不得 VeryStrong；
+  2. 按 GAA VCEP PVS1 档位核验：可否给 PVS1_Moderate（3' 端 PTC，如 3' to codon 916）/ PVS1_Strong（框内丢失催化桶外显子 6/9）；**leaky splice 通常落 Moderate 或更低**；
+  3. 同时按 GAA VCEP **PS3 口径**核验：RT-PCR 证据支持异常剪接（PS3_Moderate：非经典内含子变异无正常剪接产物；PS3_Supporting：有正常剪接产物）——leaky splice 有正常产物 → **PS3_Supporting 档**（不是 PVS1）。
+- **BS1 组合**：若该变异等位频率超 GAA BS1 阈值（最高 MAF>0.5% 且 >2000 等位），须与 PVS1 降档后联合判定，不得忽略（var124 有 BS1 未组合）。
+- **数据来源**：剪接实验数据走采集层（ClinVar/文献层功能实验证据 + PMID 关联），DataPending 不得硬凑。
+
+### 规则二：同义变异严禁 PVS1
+- **同义变异（synonymous）不是无义（nonsense）**，PVS1（LOF：nonsense/frameshift/canonical splice/initiation codon/大片段缺失）**对同义变异一律不适用**。
+- 同义变异按 **BP7/BP4** 走（SpliceAI 取到 ≤0.2/≤0.5 判 BP7 候选；REVEL 不适用同义）；误给 PVS1 是 var129 严重反向的根因，评级时若见同义+PVS1 组合必须拦下（对照 ClinVar 锚）。
+- **硬闸**：GAA 同义变异 → PVS1 强制 not_applicable（机制=同义，无 LOF），走 BP7/BP4 路径；ClinVar Benign/LB 锚对照。
+
 ### 官方链接
 - [ClinGen CSpec 文档页面](https://cspec.genome.network/cspec/ui/svi/doc/GN010)

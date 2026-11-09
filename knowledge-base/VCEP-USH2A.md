@@ -262,5 +262,21 @@ No changes. Follow recommendations as outlined in Richard 2015 and/or ClinGen's 
 ### 不适用证据码
 PP2、PP5、BP1、BP6
 
+## ⚠️ USH2A 逐变异裁定记录（var097/098/102/105/106 补全，2026-11-03）
+
+> **背景**：66 条归因中 5 条 USH2A 错误属"VCEP_USH2A 数据包补全"——根因均为**数据未采到/规则未组合**（剪接预测、PM3、频率、REVEL、ClinVar 锚缺位），非 VCEP 规则缺失。本段按归因机制固化裁定指引，重跑时规则可查（具体 HGVS 以 171 输入清单为准）。
+
+### 逐变异裁定指引（按机制分类）
+
+| 归因 | 变异类型 | 错误 | 裁定指引（重跑动作） |
+|---|---|---|---|
+| var097 | splicing | P→VUS | 非经典剪接位点：①MaxEntScan/剪接预测（PP3 口径，见上 #### PP3：非 ±1,2 剪接用 MAXENTSCAN）②补 PM3（反式致病变异/患者证据池）③补频率（PM2_Supporting：AR ≤0.007%）；三路数据齐后按表 5 组合，不得单码硬判 |
+| var098 | truncating | LP→VUS | PVS1_Strong 成立但单码待组合：按 GN005 #### PVS1（LOF 机制确立 + PVS1 flowchart 降档）+ 补第二码（PM3 反式 / PM2_Supporting AR 频率）→ 表 5 组合（PVS1_VS + PM3 / PM2_S） |
+| var102 | splicing | B→VUS | 非经典剪接未取到预测/反式/频率：BP4/PP3 需要剪接预测（MaxEntScan）；补反式伙伴（BP2_Supporting：cis/trans 观察）+ gnomAD 频率（BS1/PM2 判定） |
+| var105 | synonymous | LB→VUS | 同义走 BP7（无剪接影响 + 非高保守）+ BP4（REVEL 不适用同义，用剪接预测）+ ClinVar 锚对照；补 gnomAD 频率 |
+| var106 | splicing | P→VUS | 受体-9 非经典剪接：补剪接预测（MaxEntScan）+ 患者证据（PP4/PS4）+ 反式（PM3），数据齐后按 USH2A VCEP 组合定级 |
+
+> **通用纪律（与阶段 0-8 采集层衔接）**：以上所有数据（剪接预测/频率/反式/患者证据/ClinVar 锚）一律经**证据采集层**五路适配器获取（computational_adapters / gnomad_query / literature_layer / clinvar_query），DataPending 汇入门禁待补清单，**不得静默落 VUS**（var097/102/106 的病根正是取数失败被当"VCEP 未覆盖"）。
+
 ### 官方链接
 - [ClinGen CSpec 文档页面](https://cspec.genome.network/cspec/ui/svi/doc/GN005)

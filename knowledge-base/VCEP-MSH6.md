@@ -6,7 +6,7 @@
 
 ## 规范 1：GN138 — InSiGHT Hereditary Colorectal Cancer/Polyposis Variant Curation Expert Panel
 
-> 官网版本：Version 2.0；DOI: 10.5281/zenodo.21434726；核验日期：2026-10-09
+> 官网版本：GN138 v2.0（Released；lastUpdated 2026-09-09T17:33:30）；2026-11-09 CSpec API 实测复核
 
 ### 覆盖疾病
 - **MONDO:0005835**（遗传方式：Autosomal dominant inheritance）

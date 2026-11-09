@@ -3,7 +3,7 @@
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
 > 规范版本：未随包声明（数据日期：2026-06-13；附件文件名含版本日期线索：GN158_GALT_pilot_variants_111725.xlsx；真实官方 CSpec 版本号见 ClinGen 官网 cspec.genome.network，使用前请核验）
-> 官网版本：v1.1（2026-07-23 发布；v1.1 更新：新增 PVS1 + PM2(Supporting)=Likely Pathogenic，新增 PM2 与 BP4/BP7 不视为冲突数据）
+> 官网版本：GN158 v1.1（Released；lastUpdated 2026-07-23T19:32:10）；2026-11-09 CSpec API 实测复核
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN158 — Galactosemia Variant Curation Expert Panel 
