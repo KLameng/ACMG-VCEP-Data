@@ -2,7 +2,7 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
-> 规范版本：未随包声明（数据日期：2026-06-13；真实官方 CSpec 版本号见 ClinGen 官网 cspec.genome.network，使用前请核验）
+> 官网版本：Version 2.0（GN012，lastUpdated 2022-03-01，Released）；Version 2.0（GN150，lastUpdated 2024-12-12，Released）；Version 2.0（GN179，lastUpdated 2024-12-12，Released）；来源 ClinGen CSpec API，核对 2026-11-12
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN012 — Malignant Hyperthermia Susceptibility Variant Curation Expert Panel

@@ -96,8 +96,8 @@ Autosomal dominant: ≥15 probands with variant, and variant meets PM2_Supportin
 #### PM1
 - 默认强度：Pathogenic Moderate
 - ACMG原始定义：Located in a mutational hot spot and/or critical and well-established functional domain (e.g. active site of an enzyme) without benign variation.
-- **Moderate** 📋：Mutational hot spot or well-studied functional domain without benign variation (KCNQ4 pore-forming region).
-* KCNQ4 (NM_004700.4) gene - missense variants located within amino acids 271-292 can be awarded PM1. This region is the pore-forming intramembrane region where many variants that cause autosomal dominant hearing loss are located (Naito et al. 2013, PMID: 23717403; https://www.uniprot.org/uniprot/P56696). There are only two missense variants in this region in gnomAD, each with only single allele (http://gnomad.broadinstitute.org/; rs763326539: 1/33578 Latino chromosomes; rs55737429: 1/111720 European chromosomes).
+- **Not Applicable（不适用）**：GN005（Hearing Loss VCEP v2.0，2022-03-30）仅对 KCNQ4（NM_004700.4）孔道区残基 aa271–292 定义可激活 PM1 的突变热点；CDH23 无基因特异热点域/关键功能结构域，故 PM1 对本基因不适用。
+* ⚠️ 修订说明：本地旧版误将 KCNQ4 孔道区残基 271–292 逐字套用至 CDH23（张冠李戴），已删除；终裁为 PM1 Not Applicable，不得对 CDH23 错义变异激活 PM1。
 
 #### PM2
 - 默认强度：Pathogenic Moderate

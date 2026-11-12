@@ -2,7 +2,7 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
-> 规范版本：未随包声明（数据日期：2026-06-13；附件文件名含版本日期线索：GN105_ABCD1_functional_assays_090225.xlsx；真实官方 CSpec 版本号见 ClinGen 官网 cspec.genome.network，使用前请核验）
+> 官网版本：Version 1.0（GN105，lastUpdated 2026-04-06，Released）；来源 ClinGen CSpec API，核对 2026-11-12
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN105 — Peroxisomal Disorders Variant Curation Expert Panel 

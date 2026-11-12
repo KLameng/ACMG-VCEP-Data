@@ -2,6 +2,7 @@
 
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
+> 官网版本：Version 2.3（GN039，lastUpdated 2024-12-03，Released）；来源 ClinGen CSpec API，核对 2026-11-12
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN039 — RASopathy Variant Curation Expert Panel

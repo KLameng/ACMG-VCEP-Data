@@ -3,7 +3,7 @@
 > 来源：ClinGen Sequence Variant Interpretation (SVI) Criteria Specification Repository
 > 数据日期：2026-06-13
 > 规范版本：未随包声明（数据日期：2026-06-13；真实官方 CSpec 版本号见 ClinGen 官网 cspec.genome.network，使用前请核验）
-> 官网版本：GN048 v1.0（Released，DOI: 10.5281/zenodo.21435460，2026-10-09 官网实页核验）
+> 官网版本：GN048 v1.0（Released，DOI: 10.5281/zenodo.21435460，2026-10-09 官网实页核验）；⚠ 2026-11-12 复核：官网已升级至 2.3（lastUpdated 2024-12-03），本文件正文未随包声明版本，待重抓核对
 > ⚠️ 智能分析结果，仅供参考。临床变异评级请以ClinGen官方最新版本为准。
 
 ## 规范 1：GN048 — RASopathy Variant Curation Expert Panel

@@ -46,8 +46,7 @@ Note: Functional studies that have been validated and shown to be reproducible a
 - **Strong** ✅：* In a transgenic animal model, must demonstrate minimal to no function.
   OR
 * In a model organism or heterologous cell line, EITHER (A) when expression is normal or reduced, disruption of protein function must be demonstrated OR (B) Absent surface protein expression (<5%).
-- **Moderate** ✅：In a model organism or heterologous cell line, significantly reduced surface protein expression (5
- * 25%).
+- **Moderate** ✅：In a model organism or heterologous cell line, significantly reduced surface protein expression (5-25%).
 
 #### PS4
 - 默认强度：Pathogenic Strong
