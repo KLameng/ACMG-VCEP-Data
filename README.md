@@ -12,7 +12,7 @@
 
 | 字段 | 值 |
 |---|---|
-| 数据版本 | v1.4.3 |
+| 数据版本 | v1.4.4 |
 | 基因规范数 | 132（另有 CFTR 补充专家共识包，不计入 ClinGen 正式 VCEP 统计） |
 | VCEP 专家组数 | 43 |
 | 快照日期 | 2026-11-12（正文基线 2026-06-13 + 逐基因官网复核） |
@@ -28,7 +28,7 @@
 | `knowledge-base/` | 每基因一份合并规范 `VCEP-<基因>.md` + 索引 + 核查报告 + 官方附件 |
 | `narrative-units/` | VCEP 基因特异叙事单元（1725 个，规范叙述 1717 + 索引叙述 8） |
 | `attachment-index.csv` | 附件索引 |
-| `SKILL.md` | 数据载体技能说明（clingen-vcep 1.4.3） |
+| `SKILL.md` | 数据载体技能说明（clingen-vcep 1.4.4） |
 | `CHANGELOG.md` | 数据仓库变更记录 |
 | `VERSION` | 数据版本号 |
 | `LICENSE` | Apache License 2.0 |
@@ -43,9 +43,10 @@
 4. **manifest 增加 legacy 语义**：19 个官方归档基因标注 `legacy归档·无替代版`，`legacyReplaced` 仅在官网真为 true 时写值。
 5. **check_vcep_version.py 语义修正**：区分「legacy 归档（不阻断）」与「真被替代（阻断）」。
 
-## v1.4.3 相对 v1.4.0 的增量（2026-11-12）
+## v1.4.4 相对 v1.4.0 的增量（2026-11-12）
 
-> README 的版本历史此前停在本节（v1.4.0），v1.4.1 / v1.4.2 的增量未在此补记——此处如实标出该记录缺口，不以推测填充。
+> 本节记录 v1.4.4 这一批。README 的版本历史此前停在 v1.4.0 节：v1.4.1 / v1.4.2 的增量未在此补记——此处如实标出该记录缺口，不以推测填充。
+> 本版**同时包含 v1.4.3（2026-11-11）的基因数口径修正**（133 = 132 正式 VCEP + 1 个 CFTR2 补充包），详见 `clingen-vcep` CHANGELOG v1.4.3。
 
 1. **58 个基因补「官网版本」标注**：逐 GN 调 ClinGen CSpec API 取 `version` / `lastUpdated` / `cspecStatus`，写入 `VCEP-<基因>.md` 文件头，格式 `> 官网版本：Version X（GNnn，lastUpdated，Released）`；多规范基因（如 RYR1 三 GN）逐个列出。**标注不用于声明「正文即该版本」**，只记官网现网版本与核对日期。
 2. **`vcep-version-manifest.csv` 7 列扩为 11 列**：新增 `本地版本` / `本地版本来源` / `本地版本抽取日期` / `滞后状态`。`本地版本` 取文件头 `> 官网版本` 行记载的**核验当时官网版本**，不是正文转录版本；抽不到的写「未标注」，**不用官方版本回填冒充**。
@@ -74,6 +75,6 @@
 ### 建议引用方式
 
 - 引用原始规范：ClinGen. *[具体 VCEP 规范名称]*. Clinical Genome Resource. https://cspec.genome.network/cspec/ （accessed 2026-11-12）.
-- 引用本仓库整理层：KLameng. *ACMG-VCEP-Data v1.4.3*. https://github.com/KLameng/ACMG-VCEP-Data （accessed YYYY-MM-DD）.
+- 引用本仓库整理层：KLameng. *ACMG-VCEP-Data v1.4.4*. https://github.com/KLameng/ACMG-VCEP-Data （accessed YYYY-MM-DD）.
 
 > 本仓库为评级辅助的快速检阅通道，不构成临床诊断或治疗依据；实际判定须回 ClinGen CSpec 官网核实当期最新版本。
