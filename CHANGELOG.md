@@ -1,5 +1,45 @@
 # clingen-vcep CHANGELOG
 
+## v1.4.4（2026-11-12）官网版本标注逐基因补齐 + manifest 扩为 11 列
+
+**背景**：133 个主文件里有 62 个没有具体版本号（52 个只写『规范版本：未随包声明』、10 个无版本行），"谁滞后"根本算不出来；而手填版本等于伪造出处。
+
+- **58 个文件补「官网版本」标注**：逐 GN 调 ClinGen CSpec API 取 `version` / `lastUpdated` / `cspecStatus`，写入文件头 `> 官网版本：Version X（GNnn，lastUpdated，Released）`；多规范基因（RYR1 三 GN 等）逐个列出。实测补 58 / 跳过 75 / 失败 0。**该行记的是"核验当时的官网版本"，不是"正文转录的版本"**——多数文件正文只写『规范版本：未随包声明』，真实版本无法自证。
+- **`vcep-version-manifest.csv` 7 列扩为 11 列**：新增 `本地版本` / `本地版本来源` / `本地版本抽取日期` / `滞后状态`，由 `scripts/sync_version_manifest_cols.py` 重建，禁止手填；抽不到写「未标注」，不用官方版本回填冒充。
+- **滞后显式化**：130 `fresh` / 1 `非CSpec(CFTR2)` / **2 `LAG`**——IDUA（标注 1.1，官网 1.2）、MAP2K2（标注 1.0，官网 2.3）。`LAG` = 「文件头的官网核验记录已过期，须重新核验并重抓正文」，**不是「正文即旧版」**。两个文件头已加 ⚠ 警示行。
+- **脚本固化**：`scripts/backfill_vcep_version_marks.py`（默认 dry-run，`--apply` 落盘）、`scripts/sync_version_manifest_cols.py`（有 LAG 时 exit 1）。
+- **契约**：`contract_test` 新增 4 条版本清单断言 + 1 条「已知滞后基因仍判 LAG」防回归断言（防警示句里的"官网已升级至 X.Y"被当成标注版本 → 假 fresh），349/0。
+- **数据仓**：GitHub `KLameng/ACMG-VCEP-Data` 同步至 v1.4.4，VERSION 与 README 版本表同批更新。
+- **版本号说明**：本版原误用 1.4.3，与 v1.4.3（2026-11-11 基因数口径修正）撞号；同号两批内容会造成歧义，故升为 1.4.4，README 增量节同步更正。
+
+## v1.4.3（2026-11-11）基因数口径消除歧义（133 = 132 正式 + 1 补充）
+
+**用户 2026-11-11 拍板**："这里要写清楚，或者处理成没有歧义的方式"。133 / 132 / 131 三个数字在同包内并存，读者无法判断哪个是准的。实测三个数字各指一个集合：
+
+| 数字 | 含义 |
+|---|---|
+| **133** | `knowledge-base/` 下非 verification 的 `VCEP-*.md` 文件数（= 132 正式 + CFTR2 1） |
+| 132 | ClinGen 正式 VCEP 基因数（`SUPPLEMENT_PACKS={"CFTR"}` 把 CFTR2 补充包排除在外） |
+| 131 | 旧声明，已被 133 取代，纯滞后 |
+
+- **统一表述**（照 `knowledge-base/00-索引.md` L4 的写法）：`gene-gn-file-mapping.md` L3 的「共 132 个基因」→「共 **133** 个基因，其中 132 个 ClinGen 正式 VCEP + 1 个 CFTR2 补充数据包」，与其 CSV 的 133 行基因一致；`narrative-units/VCEP-IDX01_说明与概览.md` L8 的「131 个基因 / 120 条已发布规范」→「133 个基因 / 136 条（132 主文件中 ACTA1=2 / RYR1=3 / VWF=2 为多规范，按规范条数计）」。
+- **门禁输出同步**：`scripts/check_vcep_structure.py` 的统计行不再只报 132，改为「**133** 个基因（132 个 ClinGen 正式 VCEP + 1 个补充数据包：CFTR）」，让门禁数字与文档数字一眼对得上。
+
+## v1.4.2（2026-11-09）
+
+- **补齐 CFTR narrative 四段（v1.4.0 漏继承）**：`VCEP-CFTR.md` 一直在，但 CFTR 的 a/b/c/d 四段叙述单元在 v1.4.0 打包时丢失（narrative 1725、mapping 叙事单元数=0），导致 C1 只覆盖 136 段组、CFTR 在 C3 里成缺口。本次按 CFTR2 专家共识口径（Sosnay PR et al. Nat Genet 2013, PMID 23974870）补回 `VCEP-CFTRa_概述与疾病` / `b_致病` / `c_良性` / `d_参考` 四段，文件头明确标注「ClinGen CSpec 无 CFTR 正式 VCEP，本段为 CFTR2 共识口径摘要，非 ClinGen 官方 VCEP 规则原文」；`gene-gn-file-mapping.csv` 的 CFTR 行叙事单元数 **0 → 4**。
+- **同一缺口也存在于主装份与已发版包**：本机 `.user_skills`、v4.29.6 包、云盘包此前均为 1725，本次一并对齐到 **1729**。
+- **修 `check_vcep_structure.py` C3 假 FAIL**：C3 先把补充专家共识包（`SUPPLEMENT_PACKS = {"CFTR"}`）从 `kb_genes` 里 pop 掉，narrative 侧却仍含 CFTR → 出现「narrative-units 有而 knowledge-base 无: ['CFTR']」的自我冲突。改为比较时用 `kb_genes | set(supp_packs)` 两侧同口径；补充包真的缺主文件时仍会报 FAIL。
+- **门禁复验**：C1 **137** 规范段组 / C2 132-132 / C3 2 / C4 3；FAIL=0 WARN=3（WARN 均为设计允许的可选章节与补充包标注）。
+
+## v1.4.1（2026-11-09）
+
+- **升版监控假绿灯治理（脚本层缺陷，与用哪份数据副本无关）**：`scripts/check_vcep_version.py` 原先把 `baseline_missing` 只写进逐基因明细，不进 `needs`/`unreach`，退出码仍是 `0` —— manifest 缺失或某基因无基线时输出「发现升级 0」，与"官方确实无更新"无法区分。改为：manifest 缺失即 `[FATAL]` + exit 2；逐基因无基线计入 `no_base` 并在报告/stdout 逐条点名，同样 exit 2。首次建基线必须显式 `--refresh-baseline`。
+- **排序键修正**：原 `(1 if (x[4] or x[7]) else 0, x[0] or "0")` 把 legacy/被替代记录排到最前当"当前规范"，且版本串按字符串比（"10" > "9"）。改为 被替代 > 非 legacy > 数值化版本降序，避免多 GN 基因选中归档记录而漏掉真实升级。
+- **C4 门禁 WARN 改 FAIL + 换正确口径**：原先拿「声明的规范条数」比「主文件个数」，ACTA1(2)/RYR1(3)/VWF(2) 的多规范被压平成 1，132 个主文件恰好撞上错误声明 132，长期把差 4 条掩盖成 WARN。改为比 `## 规范 N` 章节总数（=136），并新增「声明专家组数 43 vs mapping 去重（剔除 CFTR2）」比对，任一不符即 FAIL。
+- **`00-索引.md` 声明校准**：132 条 → **136 条**已发布规范（132 主文件中含 3 个多规范基因，共 136 条）；基因 133、专家组 43 经核算无误。
+- **SKILL.md 正文数字校准**：knowledge-base 435→**437** 文件 / 60.3 MB、narrative 1721→**1725**、覆盖 132→**133** 基因；并注明附件实际位于 `knowledge-base/knowledge-base/attachments/`（历史遗留双层目录，本轮不改结构，待专门迁移）。
+
 ## v1.4.0（2026-11-09）
 
 - **官网全量复核（133 基因逐 GN 拉 CSpec API + 逐证据码机器比对）**：识别出快照后升版的 15 个基因、官方归档的 19 个 legacy 基因，并逐条核对到档位级。

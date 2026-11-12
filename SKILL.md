@@ -1,6 +1,6 @@
 ---
 name: clingen-vcep
-version: 1.4.0
+version: 1.4.4
 description: >
   ClinGen VCEP 基因特异性变异评级规范查询与应用 Skill。
   用于在 ACMG/AMP 变异评级框架下，检索某基因的 ClinGen VCEP 专家组已批准/已发布的基因特异性证据规则、
@@ -17,14 +17,14 @@ description: >
 
 | 数据包 | 位置（相对本 Skill） | 内容 | 规模 |
 |--------|----------------------|------|------|
-| **知识库** | `knowledge-base/` | 每基因一份合并规范 `VCEP-<基因>.md` + 索引 + 验证/审查报告 + ClinGen 官方附件 | 435 文件 / ≈60 MB |
-| **叙事单元** | `narrative-units/` | 按证据码类别切分的细粒度 markdown 片段，供 RAG 检索 | 1721 文件 |
+| **知识库** | `knowledge-base/` | 每基因一份合并规范 `VCEP-<基因>.md` + 索引 + 验证/审查报告 + ClinGen 官方附件 | 437 文件 / 60.3 MB |
+| **叙事单元** | `narrative-units/` | 按证据码类别切分的细粒度 markdown 片段，供 RAG 检索 | 1729 文件（含 8 个索引叙述 + CFTR 四段） |
 
 数据日期：**2026-06-13**（知识库规范正文）与 **2026-06-14**（验证报告）。
 来源：ClinGen SVI Criteria Specification Repository（cspec.genome.network）。
 ⚠️ 本数据为智能分析整理结果，**仅供参考**；临床变异评级请以 ClinGen 官方最新版本为准。
 
-### ⚠ 版本绑定与过期守卫（硬步骤，v1.1.0 强制，整改 clingen-vcep D6⑩ 不达标）
+### ⚠ 版本绑定与过期守卫（硬步骤，强制，整改 clingen-vcep D6⑩ 不达标）
 
 本技能为**本地 cspec 快照**，必须执行过期守卫，禁止静默用旧版规则定级：
 
@@ -44,7 +44,8 @@ knowledge-base/
 ├── VCEP-verification-report.md         # 早期核实报告
 ├── 审查报告_E-P.md                     # 知识库结构完整性/内容质量审查
 └── knowledge-base/
-    └── attachments/                    # ClinGen 官方参考附件（按 GN 编号命名）
+    ├── VCEP-<基因>.md                  # 规范主文件（133 个）
+    └── knowledge-base/attachments/     # ⚠ 历史遗留双层目录：附件实际在此（296 个，按 GN 编号命名）
         ├── 00-附件清单.md              # 附件清单（296 个唯一附件，按 GN 分组）
         ├── attachment_quality_report.md
         ├── dedup_mapping.json          # 去重映射
@@ -53,7 +54,7 @@ knowledge-base/
 
 ### 1.2 叙事单元（`narrative-units/`）结构
 
-扁平目录，1721 个 markdown，命名规则：
+扁平目录，1729 个 markdown（含 8 个 `VCEP-IDX*` 索引叙述 + CFTR 四段），命名规则：
 
 ```
 VCEP-<基因前缀><类别后缀><序号>.md
@@ -76,7 +77,7 @@ VCEP-<基因前缀><类别后缀><序号>.md
 
 ### 1.3 基因→GN→文件映射表（确定性路由核心）
 
-为支持"方式 B 按路径确定性读取、不跳过该用文件"，本 Skill 内置三份映射表（与数据文件逐一比对生成，覆盖全部 132 基因、296 附件）：
+为支持"方式 B 按路径确定性读取、不跳过该用文件"，本 Skill 内置三份映射表（与数据文件逐一比对生成，覆盖全部 133 基因、296 附件）：
 
 | 文件 | 用途 |
 |------|------|
